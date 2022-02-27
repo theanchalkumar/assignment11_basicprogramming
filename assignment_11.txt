@@ -1,0 +1,175 @@
+1.
+
+def word_k(k, s):    
+    # split the string where space comes
+    word = s.split(" ")
+    # iterate the loop for every word
+    for x in word:
+        # if length of current word
+        if len(x)>k:
+          # greater than k then
+          print(x)
+k = 3
+s ="Python is good"
+word_k(k, s)
+
+2.
+
+# Python3 program for removing i-th 
+# indexed character from a string
+  
+# Removes character at index i
+def remove(string, i): 
+  
+    # Characters before the i-th indexed
+    # is stored in a variable a
+    a = string[ : i] 
+      
+    # Characters after the nth indexed
+    # is stored in a variable b
+    b = string[i + 1: ]
+      
+    # Returning string after removing
+    # nth indexed character.
+    return a + b
+      
+# Driver Code
+if __name__ == '__main__':
+      
+    string = "geeksFORgeeks"
+      
+    # Remove nth index element
+    i = 5
+    
+    # Print the new string
+    print(remove(string, i))
+
+3.
+
+# Python program to split a string and  
+# join it using different delimiter
+  
+def split_string(string):
+  
+    # Split the string based on space delimiter
+    list_string = string.split(' ')
+      
+    return list_string
+  
+def join_string(list_string):
+  
+    # Join the string based on '-' delimiter
+    string = '-'.join(list_string)
+      
+    return string
+  
+# Driver Function
+if __name__ == '__main__':
+    string = 'Geeks for Geeks'
+      
+    # Splitting a string
+    list_string = split_string(string)
+    print(list_string)
+  
+     # Join list of strings into one
+    new_string = join_string(list_string)
+    print(new_string)
+
+4.
+
+# Python program to check
+# if a string is binary or not
+ 
+# function for checking the
+# string is accepted or not
+def check(string) :
+ 
+    # set function convert string
+    # into set of characters .
+    p = set(string)
+ 
+    # declare set of '0', '1' .
+    s = {'0', '1'}
+ 
+    # check set p is same as set s
+    # or set p contains only '0'
+    # or set p contains only '1'
+    # or not, if any one condition
+    # is true then string is accepted
+    # otherwise not .
+    if s == p or p == {'0'} or p == {'1'}:
+        print("Yes")
+    else :
+        print("No")
+ 
+ 
+         
+# driver code
+if __name__ == "__main__" :
+ 
+    string = "101010000111"
+ 
+    # function calling
+    check(string)
+
+5.
+
+# Python3 program to find a list of uncommon words
+  
+# Function to return all uncommon words
+def UncommonWords(A, B):
+  
+    # count will contain all the word counts
+    count = {}
+      
+    # insert words of string A to hash
+    for word in A.split():
+        count[word] = count.get(word, 0) + 1
+      
+    # insert words of string B to hash
+    for word in B.split():
+        count[word] = count.get(word, 0) + 1
+  
+    # return required list of words
+    return [word for word in count if count[word] == 1]
+  
+# Driver Code
+A = "Geeks for Geeks"
+B = "Learning from Geeks for Geeks"
+  
+# Print required answer
+print(UncommonWords(A, B))
+
+6.
+
+## initializing string
+string = "tutorialspoint"
+## initializing a list to append all the duplicate characters
+duplicates = []
+for char in string:
+   ## checking whether the character have a duplicate or not
+   ## str.count(char) returns the frequency of a char in the str
+   if string.count(char) > 1:
+   ## appending to the list if it's already not present
+   if char not in duplicates:
+   duplicates.append(char)
+print(*duplicates)
+
+7.
+
+# Python program to check special character
+
+# import required package
+import re
+
+# take inputs
+string = input('Enter any string: ')
+ 
+# special characters
+special_char = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
+
+# check string contains special characters or not
+if(special_char.search(string) == None):
+    print('String does not contain any special characters.')
+else:
+    print('The string contains special characters.')
